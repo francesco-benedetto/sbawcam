@@ -25,7 +25,12 @@ function normalizeItems(payload, key) {
   return firstArray || []
 }
 
-function Teams({ endpoint }) {
+function Teams() {
+  const codespaceName = import.meta.env.VITE_CODESPACE_NAME
+  const endpoint = codespaceName
+    ? `https://${codespaceName}-8000.app.github.dev/api/teams/`
+    : 'http://localhost:8000/api/teams/'
+
   const [teams, setTeams] = useState([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState('')

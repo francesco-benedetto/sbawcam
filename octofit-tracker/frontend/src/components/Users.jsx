@@ -25,7 +25,12 @@ function normalizeItems(payload, key) {
   return firstArray || []
 }
 
-function Users({ endpoint }) {
+function Users() {
+  const codespaceName = import.meta.env.VITE_CODESPACE_NAME
+  const endpoint = codespaceName
+    ? `https://${codespaceName}-8000.app.github.dev/api/users/`
+    : 'http://localhost:8000/api/users/'
+
   const [users, setUsers] = useState([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState('')
