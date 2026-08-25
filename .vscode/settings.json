@@ -1,0 +1,12 @@
+{
+    "chat.tools.terminal.autoApprove": {
+        "/^npm --prefix octofit-tracker/backend start$/": {
+            "approve": true,
+            "matchCommandLine": true
+        },
+        "/^npm run --prefix /workspaces/sbawcam/octofit-tracker/backend build$/": {
+            "approve": true,
+            "matchCommandLine": true
+        }
+    }
+}
