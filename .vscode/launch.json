@@ -2,11 +2,21 @@
   "version": "0.2.0",
   "configurations": [
     {
+      "name": "Debugger Python: File corrente",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${file}",
+      "console": "integratedTerminal"
+    },
+    {
       "name": "Launch Django Backend",
-      "type": "python",
+      "type": "debugpy",
       "request": "launch",
       "program": "${workspaceFolder}/octofit-tracker/backend/manage.py",
-      "args": ["runserver", "0.0.0.0:8000"],
+      "args": [
+        "runserver",
+        "0.0.0.0:8000"
+      ],
       "django": true,
       "justMyCode": true,
       "python": "${workspaceFolder}/octofit-tracker/backend/venv/bin/python",
@@ -29,7 +39,6 @@
         "--host",
         "0.0.0.0"
       ],
-      "port": 5173,
       "env": {
         "VITE_CODESPACE_NAME": "${env:CODESPACE_NAME}"
       }
